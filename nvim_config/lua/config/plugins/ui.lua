@@ -1,20 +1,20 @@
 return {
+
 	{
-		"folke/tokyonight.nvim",
+		"scottmckendry/cyberdream.nvim",
 		lazy = false,
 		priority = 1000,
-		opts = {
-			style = "night",
-			transparent = false,
-			terminal_colors = true,
-		},
-		config = function(_, opts)
-			require("tokyonight").setup(opts)
-			vim.cmd("colorscheme tokyonight")
+		config = function()
+			require("cyberdream").setup({
+				transparent = true, -- let WezTerm blur show through
+				italic_comments = true,
+				hide_fillchars = true,
+				borderless_telescope = true,
+				terminal_colors = true,
+			})
+			vim.cmd("colorscheme cyberdream")
 		end,
-	},
-
-	-- File explorer
+	}, -- File explorer
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",
@@ -72,7 +72,7 @@ return {
 		event = "VeryLazy",
 		opts = {
 			options = {
-				theme = "tokyonight",
+				theme = "auto",
 				component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
 				globalstatus = true, -- single statusline across all splits
