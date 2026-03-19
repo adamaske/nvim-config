@@ -1,18 +1,34 @@
 return {
 
 	{
-		"scottmckendry/cyberdream.nvim",
+		"ellisonleao/gruvbox.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require("cyberdream").setup({
-				transparent = true, -- let WezTerm blur show through
-				italic_comments = true,
-				hide_fillchars = true,
-				borderless_telescope = true,
-				terminal_colors = true,
+			require("gruvbox").setup({
+				terminal_colors = true, -- add neovim terminal colors
+				undercurl = true,
+				underline = true,
+				bold = true,
+				italic = {
+					strings = true,
+					emphasis = true,
+					comments = true,
+					operators = false,
+					folds = true,
+				},
+				strikethrough = true,
+				invert_selection = false,
+				invert_signs = false,
+				invert_tabline = false,
+				inverse = true, -- invert background for search, diffs, statuslines and errors
+				contrast = "", -- can be "hard", "soft" or empty string
+				palette_overrides = {},
+				overrides = {},
+				dim_inactive = false,
+				transparent_mode = false,
 			})
-			vim.cmd("colorscheme cyberdream")
+			vim.cmd("colorscheme gruvbox")
 		end,
 	}, -- File explorer
 	{
@@ -27,9 +43,9 @@ return {
 		keys = {
 			{ "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Toggle file explorer" },
 			{ "<leader>o", "<cmd>Neotree focus<cr>", desc = "Focus file explorer" },
-		    {"<leader>s", group = "splits"},
-            {"<leader>g", group = "goto"},
-        },
+			{ "<leader>s", group = "splits" },
+			{ "<leader>g", group = "goto" },
+		},
 		opts = {
 			close_if_last_window = true,
 			window = {
