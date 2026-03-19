@@ -27,7 +27,9 @@ return {
 		keys = {
 			{ "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Toggle file explorer" },
 			{ "<leader>o", "<cmd>Neotree focus<cr>", desc = "Focus file explorer" },
-		},
+		    {"<leader>s", group = "splits"},
+            {"<leader>g", group = "goto"},
+        },
 		opts = {
 			close_if_last_window = true,
 			window = {
