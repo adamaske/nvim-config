@@ -1,5 +1,5 @@
 local opt = vim.opt
-
+vim.g.python3_host_prog = "C:\\Users\\adama\\miniconda3\\python.exe"
 -- Line Numbers
 opt.number = true
 opt.relativenumber = false
